@@ -1,0 +1,12 @@
+
+
+
+alias ssh-bbb="ssh debian@192.168.6.2"
+scp-bbb()
+{
+    scp -r debian@192.168.6.2:"@1" "@2"
+}
+
+export PATH="$PATH:$PWD"
+
+export BBB_CROSS_SYSROOT="/home/cole/Documents/bbb-11-reference-filesystem/rootfs"

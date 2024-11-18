@@ -1,16 +1,25 @@
 #!/usr/bin/env python
+
+# Not my own script. Found in comments on a beagleboard discussion page:
+# https://forum.beagleboard.org/t/cloning-the-root-filesystem-for-cross-compiling/29828/3
+
 import sys
 import os
 
 # Take a sysroot directory and turn all the abolute symlinks and turn them into
 # relative ones such that the sysroot is usable within another system.
 
-if len(sys.argv) != 2:
-    print("Usage is " + sys.argv[0] + "<directory>")
-    sys.exit(1)
+# if len(sys.argv) != 2:
+#     print("Usage is " + sys.argv[0] + "<directory>")
+#     sys.exit(1)
 
-topdir = sys.argv[1]
-topdir = os.path.abspath(topdir)
+# topdir1 = sys.argv[1]
+# topdir1 = os.path.abspath(topdir1)
+
+topdir = os.environ['BBB_CROSS_SYSROOT']
+
+print(topdir1)
+print(topdir)
 
 def handlelink(filep, subdir):
     link = os.readlink(filep)
