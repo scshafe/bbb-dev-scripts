@@ -1,11 +1,11 @@
 #!/bin/bash                                                                     
 
 # the interface here is for wifi
-iptables --table nat --append POSTROUTING --out-interface enp0s3 -j MASQUERADE
+sudo iptables --table nat --append POSTROUTING --out-interface enp0s3 -j MASQUERADE
 
 # the interface here is for bbb
-iptables --append FORWARD --in-interface enxb6d1e82bff6a -j ACCEPT
+sudo iptables --append FORWARD --in-interface enxb6d1e82bff6a -j ACCEPT
 
-echo 1 > /proc/sys/net/ipv4/ip_forward
+echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 
 

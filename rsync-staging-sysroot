@@ -3,9 +3,9 @@
 # make sure to first run:
 # $: source env-crosscompile
 
-if [[ -z "${BBB_CROSS_SYSROOT}"]]; then
+if [[ -z "${BBB_CROSS_SYSROOT}" ]]; then
     echo "Error: must first run\n$: source env-bbb"
-    exit(1)
+    exit 1;
 fi
 
 

@@ -18,7 +18,7 @@ import os
 
 topdir = os.environ['BBB_CROSS_SYSROOT']
 
-print(topdir1)
+# print(topdir1)
 print(topdir)
 
 def handlelink(filep, subdir):
